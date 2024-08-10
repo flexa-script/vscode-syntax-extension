@@ -1,0 +1,25 @@
+{
+  "name": "cplang",
+  "displayName": "CPLang",
+  "description": "CP Programming Language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "cplang",
+      "aliases": ["CP", "cplang"],
+      "extensions": [".cp"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "cplang",
+      "scopeName": "source.cp",
+      "path": "./syntaxes/cplang.tmLanguage.json"
+    }]
+  }
+}

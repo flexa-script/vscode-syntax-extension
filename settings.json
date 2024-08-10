@@ -1,0 +1,12 @@
+{
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "constant.character.cplang",
+        "settings": {
+          "foreground": "#a31515"
+        }
+      }
+    ]
+  }
+}
