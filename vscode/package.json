@@ -2,7 +2,11 @@
   "name": "cplang",
   "displayName": "CPLang",
   "description": "CP Programming Language",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CP-Lang/extensions.git"
+  },
   "engines": {
     "vscode": "^1.92.0"
   },

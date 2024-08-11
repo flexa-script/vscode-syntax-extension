@@ -93,9 +93,18 @@ switch (0) {
   default:
 }
 
-var ms = `
+var ms = `asda
   This is a multiline string that accepts expressions.
-    - expression: ${10+5};
-    - variable: ${n};
+    - expression: ${8 * 10 + 5 / 10 - 8};
+    - expression: ${8 * 10 + 5 / 10 - 8};
+    - expression: ${true or false and false or true and not false};
+    - expression: ${typeid(10) == typeid(20)};
+    - expression: ${true != false or 9 >= 66 and 10 < 5 and not 2 > 99};
+    - expression: ${99 << 99 >> 33 | 8 ^ 16 & 32};
+    - variable: ${len({0, 1, 2})};
+    - other multiline string: ${`MLS
+      Hi, ${"there" + string({'a', 'b', 'c'}) + string({{0, 1, 2},{0, 1, 2},{0, 1, 2}})}!
+    `}
+    - struct: ${StructTest{struct_var="string", second_var=9}}
     - etc.
 `;
