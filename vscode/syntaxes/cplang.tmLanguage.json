@@ -13,7 +13,7 @@
           "name": "keyword.control.cplang"
         },
         "2": {
-          "name": "entity.name.class"
+          "name": "entity.name.class.cplang"
         }
       }
     },
@@ -60,6 +60,7 @@
     "interpolated-arrays": {
       "patterns": [
         {
+          "name": "keyword.operator.cplang",
           "begin": "\\{",
           "end": "\\}",
           "patterns": [
@@ -71,17 +72,17 @@
     "interpolated-structs": {
       "patterns": [
         {
-          "match": "\\b([_a-zA-Z][_a-zA-Z0-9]*)\\b(?=\\s*\\{)",
-          "name": "entity.name.class.cplang"
+          "name": "entity.name.class.cplang",
+          "match": "\\b([_a-zA-Z][_a-zA-Z0-9]*)\\b(?=\\s*\\{)"
         }
       ]
     },
     "interpolated-expressions": {
       "patterns": [
+        { "include": "#line-comments" },
+        { "include": "#block-comments" },
         { "include": "#types" },
         { "include": "#constants" },
-        { "include": "#operators" },
-        { "include": "#variables" },
         { "include": "#numbers" },
         { "include": "#functions" },
         { "include": "#builtins" },
@@ -90,15 +91,15 @@
         { "include": "#interpolated-arrays" },
         { "include": "#interpolated-structs" },
         { "include": "#multiline-strings" },
-        { "include": "#line-comments" },
-        { "include": "#block-comments" }
+        { "include": "#variables" },
+        { "include": "#operators" }
       ]
     },
     "operators": {
       "patterns": [
         {
-          "name": "keyword.operator",
-          "match": "(\\+|\\-|\\*|\\/!\\*|%|\\/%|\\*\\*|\\^|\\&|\\||~|<<|>>|==|!=|<|>|<=|>=|<=>|\\+\\+|\\-\\-|\\?|:|::|=|,|\\(|\\)|\\{|\\})"
+          "name": "keyword.operator.cplang",
+          "match": "(\\+|\\-|\\*|\\/|%|\\/%|\\*\\*|\\^|\\&|\\||~|<<|>>|==|!=|<|>|<=|>=|<=>|\\+\\+|\\-\\-|\\?|:|::|=|,|\\(|\\)|\\{|\\})"
         }
       ]
     },
