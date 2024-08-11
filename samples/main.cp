@@ -2,18 +2,24 @@
  * Sample test file
  */
 
-namespace namespace_set_test;
+// the namespace is the first non mandatory statemente,
+// and define the namespace of all file
+namespace this_file_namespace;
 
-using using_test;
+using cp.core.exception;
+using some_lib;
+using folder.subfolder.lib;
 
-as namespace as_namespace_test;
+as namespace nmsp;
 
 struct StructTest {
   var struct_var: string;
   var second_var: int;
 };
 
-fun function_test(a: bool, b: int, c: float = 1f, x: char = '\0', ...y: string): any {
+fun function_test(a: bool, b: int, c: float = 1f,
+                  x: char = '\0', ...y: string,
+                  z[]: nmsp::StructName, alpha: any): nmsp::StructName {
   if (b == int(c) or 1 != 10 and true) {
     return true;
   } else if (a == false) {
@@ -23,6 +29,8 @@ fun function_test(a: bool, b: int, c: float = 1f, x: char = '\0', ...y: string):
   }
 }
 
+println(nmsp::function_ret_value());
+nmsp::function_call();
 function_test(ref true, unref 5);
 
 for (var i = 0; i < 10; i++) {
@@ -41,13 +49,22 @@ try {
   println("if you throw it will catch: " + error);
 }
 
+try {
+  throw cp::Exception{error="generated unpacked struct error"};
+} catch (...) {}
+
 var arr[10]: int = {0,1,2,3,4,5,6,7,8,9};
 
 foreach (var v in arr) {
   println("we can loop arrays: ", v);
+  if (false) {
+    continue;
+  }
 }
 
 var str: StructTest = StructTest{struct_var="string", second_var=9};
+
+var val: nmsp::StructName = nmsp::StructName{};
 
 foreach (var [key, value] in str) { // we can loop struct key-values
   println(key, ':', value);
@@ -55,6 +72,9 @@ foreach (var [key, value] in str) { // we can loop struct key-values
 
 foreach (var c in "Hello CP!") { // and even strings
   print(c);
+  if (false) {
+    break;
+  }
 }
 
 var n = {
@@ -108,3 +128,5 @@ var ms = `asda
     - struct: ${StructTest{struct_var="string", second_var=9}}
     - etc.
 `;
+
+exit(0);

@@ -3,11 +3,7 @@
   "name": "CP",
   "patterns": [
     {
-      "name": "keyword.control.cplang",
-      "match": "\\b(if|else|while|do|for|foreach|enum|switch|case|break|default|continue|exit|const|var|fun|return|try|catch|throw|struct)\\b"
-    },
-    {
-      "match": "\\b(namespace|as namespace|using)\\s+([_a-zA-Z][_a-zA-Z0-9]*)\\b",
+      "match": "\\b(namespace|as namespace|using)\\s+([_a-zA-Z]([_a-zA-Z0-9]|\\.)*)\\b",
       "captures": {
         "1": {
           "name": "keyword.control.cplang"
@@ -16,6 +12,10 @@
           "name": "entity.name.class.cplang"
         }
       }
+    },
+    {
+      "name": "keyword.control.cplang",
+      "match": "\\b(namespace|as|using|if|else|while|do|for|foreach|enum|switch|case|break|default|continue|exit|const|var|fun|return|try|catch|throw|struct)\\b"
     },
     { "include": "#multiline-strings" },
     { "include": "#types" },
@@ -149,7 +149,15 @@
               }
             },
             {
-              "match": "(?<=\\bvar\\s+[_a-zA-Z][_a-zA-Z0-9]*\\s*:\\s*)\\b[_a-zA-Z][_a-zA-Z0-9]*\\b",
+              "match": "\\b([_a-zA-Z][_a-zA-Z0-9]*)\\b::",
+              "captures": {
+                "1": {
+                  "name": "entity.name.class.cplang"
+                }
+              }
+            },
+            {
+              "match": "(?<=:\\s*)\\b[_a-zA-Z][_a-zA-Z0-9]*\\b",
               "name": "entity.name.class.cplang"
             },
             {

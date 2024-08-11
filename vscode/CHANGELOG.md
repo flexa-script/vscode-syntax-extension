@@ -8,11 +8,16 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Initial release 1.0.0
 
-## [X.X.X] YYYY-MM-DD
+## [1.0.6] 2024-08-11
 
 ### Added
 
 ### Fixed
+
+- Lib names when in foldes now are recognized
+- `namespace`, `as`, and `using` now are recognized as keywords when alone
+- Now struct names after namespace are recognized
+- Now namespaces are recognized
 
 ### Changed
 
