@@ -77,6 +77,14 @@ foreach (var c in "Hello CP!") { // and even strings
   }
 }
 
+while (true) {
+  break;
+}
+
+do {
+  break;
+} while (true);
+
 var n = {
   1234567890,
   0b0,
