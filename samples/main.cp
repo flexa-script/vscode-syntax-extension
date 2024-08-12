@@ -106,6 +106,7 @@ var n = {
 
 switch (0) {
   case 0:
+    ptintln(len(n) > 10 ? str : val);
     break;
   case 1:
   case 2:
